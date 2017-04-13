@@ -15,11 +15,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/poll/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
-              <caret line="272" column="46" lean-forward="false" selection-start-line="272" selection-start-column="46" selection-end-line="272" selection-end-column="47" />
+            <state relative-caret-position="880">
+              <caret line="193" column="67" lean-forward="false" selection-start-line="193" selection-start-column="67" selection-end-line="193" selection-end-column="67" />
               <folding>
                 <element signature="e#0#71#0" expanded="true" />
               </folding>
@@ -27,10 +27,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AA/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="644">
+            <state relative-caret-position="908">
               <caret line="122" column="20" lean-forward="true" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="20" />
               <folding>
                 <element signature="e#306#315#0" expanded="true" />
@@ -106,8 +106,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/poll/templates/poll/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1672">
-              <caret line="294" column="66" lean-forward="false" selection-start-line="294" selection-start-column="66" selection-end-line="294" selection-end-column="66" />
+            <state relative-caret-position="396">
+              <caret line="290" column="47" lean-forward="false" selection-start-line="290" selection-start-column="39" selection-end-line="290" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -136,6 +136,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>dash</find>
+      <find>no_count</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -151,12 +152,12 @@
         <option value="$PROJECT_DIR$/poll/templates/poll/results.html" />
         <option value="$PROJECT_DIR$/poll/templates/poll/index.html" />
         <option value="$PROJECT_DIR$/poll/models.py" />
-        <option value="$PROJECT_DIR$/poll/views.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/AA/wsgi.py" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/AA/settings.py" />
+        <option value="$PROJECT_DIR$/poll/views.py" />
       </list>
     </option>
   </component>
@@ -629,7 +630,7 @@
         <state relative-caret-position="154">
           <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -852,7 +853,7 @@
         <state relative-caret-position="154">
           <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -863,16 +864,6 @@
           <caret line="24" column="39" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="39" />
           <folding>
             <element signature="e#636#677#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/poll/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="272" column="46" lean-forward="false" selection-start-line="272" selection-start-column="46" selection-end-line="272" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#71#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -927,14 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/poll/templates/poll/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1672">
-          <caret line="294" column="66" lean-forward="false" selection-start-line="294" selection-start-column="66" selection-end-line="294" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/poll/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -945,10 +928,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AA/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
+        <state relative-caret-position="908">
           <caret line="122" column="20" lean-forward="true" selection-start-line="122" selection-start-column="20" selection-end-line="122" selection-end-column="20" />
           <folding>
             <element signature="e#306#315#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/poll/templates/poll/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="290" column="47" lean-forward="false" selection-start-line="290" selection-start-column="39" selection-end-line="290" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/poll/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="193" column="67" lean-forward="false" selection-start-line="193" selection-start-column="67" selection-end-line="193" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#71#0" expanded="true" />
           </folding>
         </state>
       </provider>
