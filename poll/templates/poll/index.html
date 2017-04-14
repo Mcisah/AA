@@ -295,6 +295,13 @@
                             Hello, there was a problem. Try Again.
                         </div>
                     {% endif %}
+                    {% if response == "no_one" %}
+                        <div class="alert alert-danger alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <h4><i class="icon fa fa-info"></i>No Selection</h4>
+                            You did not select a contestant.
+                        </div>
+                    {% endif %}
                     <div class="box box-danger">
                         <div class="box-header with-border">
                           <h3 class="box-title">{{ student_category.name }}</h3>

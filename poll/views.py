@@ -8,7 +8,7 @@ def vote(request):
     if 'vote_student' in request.POST:
         contestant = request.POST.get('student_year', '')
         if contestant == '':
-            return HttpResponseRedirect("/poll/?response=no_count")
+            return HttpResponseRedirect("/poll/?response=no_one")
 
 
         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
@@ -35,7 +35,7 @@ def vote(request):
     elif 'vote_face' in request.POST:
         contestant = request.POST.get('face_year', '')
         if contestant == '':
-            return HttpResponseRedirect("/poll/?response=no_count")
+            return HttpResponseRedirect("/poll/?response=no_one")
 
         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
         if x_forwarded_for:
@@ -61,7 +61,7 @@ def vote(request):
     elif 'vote_couple' in request.POST:
         contestant = request.POST.get('couple_year', '')
         if contestant == '':
-            return HttpResponseRedirect("/poll/?response=no_count")
+            return HttpResponseRedirect("/poll/?response=no_one")
 
         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
         if x_forwarded_for:
@@ -87,7 +87,7 @@ def vote(request):
     elif 'vote_popular' in request.POST:
         contestant = request.POST.get('popular_year', '')
         if contestant == '':
-            return HttpResponseRedirect("/poll/?response=no_count")
+            return HttpResponseRedirect("/poll/?response=no_one")
 
         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
         if x_forwarded_for:
@@ -113,7 +113,7 @@ def vote(request):
     elif 'vote_entrepreneur' in request.POST:
         contestant = request.POST.get('entrepreneur_year', '')
         if contestant == '':
-            return HttpResponseRedirect("/poll/?response=no_count")
+            return HttpResponseRedirect("/poll/?response=no_one")
 
         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
         if x_forwarded_for:
@@ -139,7 +139,7 @@ def vote(request):
     elif 'vote_fashion_male' in request.POST:
         contestant = request.POST.get('fashionable_male_year', '')
         if contestant == '':
-            return HttpResponseRedirect("/poll/?response=no_count")
+            return HttpResponseRedirect("/poll/?response=no_one")
 
         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
         if x_forwarded_for:
@@ -165,7 +165,7 @@ def vote(request):
     elif 'vote_fashion_female' in request.POST:
         contestant = request.POST.get('fashionable_female_year', '')
         if contestant == '':
-            return HttpResponseRedirect("/poll/?response=no_count")
+            return HttpResponseRedirect("/poll/?response=no_one")
 
         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
         if x_forwarded_for:
@@ -191,7 +191,7 @@ def vote(request):
     elif 'vote_personality' in request.POST:
         contestant = request.POST.get('personality_year', '')
         if contestant == '':
-            return HttpResponseRedirect("/poll/?response=no_count")
+            return HttpResponseRedirect("/poll/?response=no_one")
 
         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
         if x_forwarded_for:
