@@ -241,15 +241,15 @@ def index(request):
     personality_category = Category.objects.get(id=8)
     other_category = Category.objects.get(id=9)
 
-    student_year = Contestant.objects.filter(category=1)
-    couple_year = Contestant.objects.filter(category=2)
-    face_year = Contestant.objects.filter(category=3)
-    entrepreneur_year = Contestant.objects.filter(category=4)
-    popular_year = Contestant.objects.filter(category=5)
-    fashionable_male_year = Contestant.objects.filter(category=6)
-    fashionable_female_year = Contestant.objects.filter(category=7)
-    personality_year = Contestant.objects.filter(category=8)
-    other_year = Contestant.objects.filter(category=9)
+    student_year = Contestant.objects.filter(category=1).order_by('id')
+    couple_year = Contestant.objects.filter(category=2).order_by('id')
+    face_year = Contestant.objects.filter(category=3).order_by('id')
+    entrepreneur_year = Contestant.objects.filter(category=4).order_by('id')
+    popular_year = Contestant.objects.filter(category=5).order_by('id')
+    fashionable_male_year = Contestant.objects.filter(category=6).order_by('id')
+    fashionable_female_year = Contestant.objects.filter(category=7).order_by('id')
+    personality_year = Contestant.objects.filter(category=8).order_by('id')
+    other_year = Contestant.objects.filter(category=9).order_by('id')
 
 
 
@@ -290,15 +290,15 @@ def result(request):
     personality_category = Category.objects.get(id=8)
     other_category = Category.objects.get(id=9)
 
-    student_year = Contestant.objects.filter(category=1)
-    couple_year = Contestant.objects.filter(category=2)
-    face_year = Contestant.objects.filter(category=3)
-    entrepreneur_year = Contestant.objects.filter(category=4)
-    popular_year = Contestant.objects.filter(category=5)
-    fashionable_male_year = Contestant.objects.filter(category=6)
-    fashionable_female_year = Contestant.objects.filter(category=7)
-    personality_year = Contestant.objects.filter(category=8)
-    other_year = Contestant.objects.filter(category=9)
+    student_year = Contestant.objects.filter(category=1).order_by('id')
+    couple_year = Contestant.objects.filter(category=2).order_by('id')
+    face_year = Contestant.objects.filter(category=3).order_by('id')
+    entrepreneur_year = Contestant.objects.filter(category=4).order_by('id')
+    popular_year = Contestant.objects.filter(category=5).order_by('id')
+    fashionable_male_year = Contestant.objects.filter(category=6).order_by('id')
+    fashionable_female_year = Contestant.objects.filter(category=7).order_by('id')
+    personality_year = Contestant.objects.filter(category=8).order_by('id')
+    other_year = Contestant.objects.filter(category=9).order_by('id')
 
     return render(request, "poll/results.html", {
         'student_category': student_category,
