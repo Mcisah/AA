@@ -43,7 +43,7 @@
         <div id="navbar-collapse" aria-expanded="false" style="height: 0.833333px;" class="navbar-collapse pull-left collapse">
           <ul class="nav navbar-nav">
             <li><a href="{% url 'poll:index' %}">Vote<span class="sr-only">(current)</span></a></li>
-            <li><a href="{% url 'poll:result' %}">Results</a></li>
+            <li><a href="{% url 'poll:index' %}">Results</a></li>
             <li><a href="{% url 'poll:about' %}">About</a></li>
           </ul>
 
@@ -78,6 +78,11 @@
       <section class="content">
         <div class="row">
             <div class="col-md-6">
+                        <div class="alert alert-danger alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <h4><i class="icon fa fa-info"></i>Voting Closed</h4>
+                            Voting has ended
+                        </div>
                 <div class="box box-solid">
                     <div class="box-header">
                       <h3 class="box-title">{{ student_category.name }}</h3>

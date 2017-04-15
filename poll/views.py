@@ -3,222 +3,222 @@ from django.shortcuts import render, HttpResponse, HttpResponseRedirect
 from poll.models import Category, Contestant, Vote, Sum
 from django.db.models import Q
 
+#
+# def vote(request):
+#     if 'vote_student' in request.POST:
+#         contestant = request.POST.get('student_year', '')
+#         if contestant == '':
+#             return HttpResponseRedirect("/poll/?response=no_one")
+#
+#
+#         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+#         if x_forwarded_for:
+#             ipaddress = x_forwarded_for.split(',')[-1].strip()
+#         else:
+#             ipaddress = request.META.get('REMOTE_ADDR')
+#
+#         vote_count = Vote.objects.filter(ip_ad=ipaddress, category=1).count()
+#         if vote_count > 0:
+#             return HttpResponseRedirect("/poll/?response=already")
+#         else:
+#             pass
+#
+#         voted = Vote(ip_ad=ipaddress, contestant=contestant, category="1")
+#         voted.save()
+#
+#         contestant_here = Contestant.objects.get(id=contestant)
+#         contestant_here.votes += 1
+#         contestant_here.save()
+#
+#         return HttpResponseRedirect("/poll/?board=rj41&category=student")
+#
+#     elif 'vote_face' in request.POST:
+#         contestant = request.POST.get('face_year', '')
+#         if contestant == '':
+#             return HttpResponseRedirect("/poll/?response=no_one")
+#
+#         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+#         if x_forwarded_for:
+#             ipaddress = x_forwarded_for.split(',')[-1].strip()
+#         else:
+#             ipaddress = request.META.get('REMOTE_ADDR')
+#
+#         vote_count = Vote.objects.filter(ip_ad=ipaddress, category=3).count()
+#         if vote_count > 0:
+#             return HttpResponseRedirect("/poll/?response=already")
+#         else:
+#             pass
+#
+#         voted = Vote(ip_ad=ipaddress, contestant=contestant, category="3")
+#         voted.save()
+#
+#         contestant_here = Contestant.objects.get(id=contestant)
+#         contestant_here.votes += 1
+#         contestant_here.save()
+#
+#         return HttpResponseRedirect("/poll/?board=rj43&category=face")
+#
+#     elif 'vote_couple' in request.POST:
+#         contestant = request.POST.get('couple_year', '')
+#         if contestant == '':
+#             return HttpResponseRedirect("/poll/?response=no_one")
+#
+#         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+#         if x_forwarded_for:
+#             ipaddress = x_forwarded_for.split(',')[-1].strip()
+#         else:
+#             ipaddress = request.META.get('REMOTE_ADDR')
+#
+#         vote_count = Vote.objects.filter(ip_ad=ipaddress, category=2).count()
+#         if vote_count > 0:
+#             return HttpResponseRedirect("/poll/?response=already")
+#         else:
+#             pass
+#
+#         voted = Vote(ip_ad=ipaddress, contestant=contestant, category="2")
+#         voted.save()
+#
+#         contestant_here = Contestant.objects.get(id=contestant)
+#         contestant_here.votes += 1
+#         contestant_here.save()
+#
+#         return HttpResponseRedirect("/poll/?board=rj42&category=couple")
+#
+#     elif 'vote_popular' in request.POST:
+#         contestant = request.POST.get('popular_year', '')
+#         if contestant == '':
+#             return HttpResponseRedirect("/poll/?response=no_one")
+#
+#         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+#         if x_forwarded_for:
+#             ipaddress = x_forwarded_for.split(',')[-1].strip()
+#         else:
+#             ipaddress = request.META.get('REMOTE_ADDR')
+#
+#         vote_count = Vote.objects.filter(ip_ad=ipaddress, category=5).count()
+#         if vote_count > 0:
+#             return HttpResponseRedirect("/poll/?response=already")
+#         else:
+#             pass
+#
+#         voted = Vote(ip_ad=ipaddress, contestant=contestant, category="5")
+#         voted.save()
+#
+#         contestant_here = Contestant.objects.get(id=contestant)
+#         contestant_here.votes += 1
+#         contestant_here.save()
+#
+#         return HttpResponseRedirect("/poll/?board=rj45&category=popular")
+#
+#     elif 'vote_entrepreneur' in request.POST:
+#         contestant = request.POST.get('entrepreneur_year', '')
+#         if contestant == '':
+#             return HttpResponseRedirect("/poll/?response=no_one")
+#
+#         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+#         if x_forwarded_for:
+#             ipaddress = x_forwarded_for.split(',')[-1].strip()
+#         else:
+#             ipaddress = request.META.get('REMOTE_ADDR')
+#
+#         vote_count = Vote.objects.filter(ip_ad=ipaddress, category=4).count()
+#         if vote_count > 0:
+#             return HttpResponseRedirect("/poll/?response=already")
+#         else:
+#             pass
+#
+#         voted = Vote(ip_ad=ipaddress, contestant=contestant, category="4")
+#         voted.save()
+#
+#         contestant_here = Contestant.objects.get(id=contestant)
+#         contestant_here.votes += 1
+#         contestant_here.save()
+#
+#         return HttpResponseRedirect("/poll/?board=rj44&category=entrepreneur")
+#
+#     elif 'vote_fashion_male' in request.POST:
+#         contestant = request.POST.get('fashionable_male_year', '')
+#         if contestant == '':
+#             return HttpResponseRedirect("/poll/?response=no_one")
+#
+#         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+#         if x_forwarded_for:
+#             ipaddress = x_forwarded_for.split(',')[-1].strip()
+#         else:
+#             ipaddress = request.META.get('REMOTE_ADDR')
+#
+#         vote_count = Vote.objects.filter(ip_ad=ipaddress, category=6).count()
+#         if vote_count > 0:
+#             return HttpResponseRedirect("/poll/?response=already")
+#         else:
+#             pass
+#
+#         voted = Vote(ip_ad=ipaddress, contestant=contestant, category="6")
+#         voted.save()
+#
+#         contestant_here = Contestant.objects.get(id=contestant)
+#         contestant_here.votes += 1
+#         contestant_here.save()
+#
+#         return HttpResponseRedirect("/poll/?board=rj46&category=f_male")
+#
+#     elif 'vote_fashion_female' in request.POST:
+#         contestant = request.POST.get('fashionable_female_year', '')
+#         if contestant == '':
+#             return HttpResponseRedirect("/poll/?response=no_one")
+#
+#         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+#         if x_forwarded_for:
+#             ipaddress = x_forwarded_for.split(',')[-1].strip()
+#         else:
+#             ipaddress = request.META.get('REMOTE_ADDR')
+#
+#         vote_count = Vote.objects.filter(ip_ad=ipaddress, category=7).count()
+#         if vote_count > 0:
+#             return HttpResponseRedirect("/poll/?response=already")
+#         else:
+#             pass
+#
+#         voted = Vote(ip_ad=ipaddress, contestant=contestant, category="7")
+#         voted.save()
+#
+#         contestant_here = Contestant.objects.get(id=contestant)
+#         contestant_here.votes += 1
+#         contestant_here.save()
+#
+#         return HttpResponseRedirect("/poll/?board=rj47&category=f_female")
+#
+#     elif 'vote_personality' in request.POST:
+#         contestant = request.POST.get('personality_year', '')
+#         if contestant == '':
+#             return HttpResponseRedirect("/poll/?response=no_one")
+#
+#         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+#         if x_forwarded_for:
+#             ipaddress = x_forwarded_for.split(',')[-1].strip()
+#         else:
+#             ipaddress = request.META.get('REMOTE_ADDR')
+#
+#         vote_count = Vote.objects.filter(ip_ad=ipaddress, category=8).count()
+#         if vote_count > 0:
+#             return HttpResponseRedirect("/poll/?response=already")
+#         else:
+#             pass
+#
+#         voted = Vote(ip_ad=ipaddress, contestant=contestant, category="8")
+#         voted.save()
+#
+#         contestant_here = Contestant.objects.get(id=contestant)
+#         contestant_here.votes += 1
+#         contestant_here.save()
+#
+#         return HttpResponseRedirect("/poll/?board=rj48&category=personality")
+#
+#     else:
+#         return HttpResponseRedirect("/poll/?response=no_count")
 
-def vote(request):
-    if 'vote_student' in request.POST:
-        contestant = request.POST.get('student_year', '')
-        if contestant == '':
-            return HttpResponseRedirect("/poll/?response=no_one")
 
-
-        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-        if x_forwarded_for:
-            ipaddress = x_forwarded_for.split(',')[-1].strip()
-        else:
-            ipaddress = request.META.get('REMOTE_ADDR')
-
-        vote_count = Vote.objects.filter(ip_ad=ipaddress, category=1).count()
-        if vote_count > 0:
-            return HttpResponseRedirect("/poll/?response=already")
-        else:
-            pass
-
-        voted = Vote(ip_ad=ipaddress, contestant=contestant, category="1")
-        voted.save()
-
-        contestant_here = Contestant.objects.get(id=contestant)
-        contestant_here.votes += 1
-        contestant_here.save()
-
-        return HttpResponseRedirect("/poll/?board=rj41&category=student")
-
-    elif 'vote_face' in request.POST:
-        contestant = request.POST.get('face_year', '')
-        if contestant == '':
-            return HttpResponseRedirect("/poll/?response=no_one")
-
-        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-        if x_forwarded_for:
-            ipaddress = x_forwarded_for.split(',')[-1].strip()
-        else:
-            ipaddress = request.META.get('REMOTE_ADDR')
-
-        vote_count = Vote.objects.filter(ip_ad=ipaddress, category=3).count()
-        if vote_count > 0:
-            return HttpResponseRedirect("/poll/?response=already")
-        else:
-            pass
-
-        voted = Vote(ip_ad=ipaddress, contestant=contestant, category="3")
-        voted.save()
-
-        contestant_here = Contestant.objects.get(id=contestant)
-        contestant_here.votes += 1
-        contestant_here.save()
-
-        return HttpResponseRedirect("/poll/?board=rj43&category=face")
-
-    elif 'vote_couple' in request.POST:
-        contestant = request.POST.get('couple_year', '')
-        if contestant == '':
-            return HttpResponseRedirect("/poll/?response=no_one")
-
-        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-        if x_forwarded_for:
-            ipaddress = x_forwarded_for.split(',')[-1].strip()
-        else:
-            ipaddress = request.META.get('REMOTE_ADDR')
-
-        vote_count = Vote.objects.filter(ip_ad=ipaddress, category=2).count()
-        if vote_count > 0:
-            return HttpResponseRedirect("/poll/?response=already")
-        else:
-            pass
-
-        voted = Vote(ip_ad=ipaddress, contestant=contestant, category="2")
-        voted.save()
-
-        contestant_here = Contestant.objects.get(id=contestant)
-        contestant_here.votes += 1
-        contestant_here.save()
-
-        return HttpResponseRedirect("/poll/?board=rj42&category=couple")
-
-    elif 'vote_popular' in request.POST:
-        contestant = request.POST.get('popular_year', '')
-        if contestant == '':
-            return HttpResponseRedirect("/poll/?response=no_one")
-
-        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-        if x_forwarded_for:
-            ipaddress = x_forwarded_for.split(',')[-1].strip()
-        else:
-            ipaddress = request.META.get('REMOTE_ADDR')
-
-        vote_count = Vote.objects.filter(ip_ad=ipaddress, category=5).count()
-        if vote_count > 0:
-            return HttpResponseRedirect("/poll/?response=already")
-        else:
-            pass
-
-        voted = Vote(ip_ad=ipaddress, contestant=contestant, category="5")
-        voted.save()
-
-        contestant_here = Contestant.objects.get(id=contestant)
-        contestant_here.votes += 1
-        contestant_here.save()
-
-        return HttpResponseRedirect("/poll/?board=rj45&category=popular")
-
-    elif 'vote_entrepreneur' in request.POST:
-        contestant = request.POST.get('entrepreneur_year', '')
-        if contestant == '':
-            return HttpResponseRedirect("/poll/?response=no_one")
-
-        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-        if x_forwarded_for:
-            ipaddress = x_forwarded_for.split(',')[-1].strip()
-        else:
-            ipaddress = request.META.get('REMOTE_ADDR')
-
-        vote_count = Vote.objects.filter(ip_ad=ipaddress, category=4).count()
-        if vote_count > 0:
-            return HttpResponseRedirect("/poll/?response=already")
-        else:
-            pass
-
-        voted = Vote(ip_ad=ipaddress, contestant=contestant, category="4")
-        voted.save()
-
-        contestant_here = Contestant.objects.get(id=contestant)
-        contestant_here.votes += 1
-        contestant_here.save()
-
-        return HttpResponseRedirect("/poll/?board=rj44&category=entrepreneur")
-
-    elif 'vote_fashion_male' in request.POST:
-        contestant = request.POST.get('fashionable_male_year', '')
-        if contestant == '':
-            return HttpResponseRedirect("/poll/?response=no_one")
-
-        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-        if x_forwarded_for:
-            ipaddress = x_forwarded_for.split(',')[-1].strip()
-        else:
-            ipaddress = request.META.get('REMOTE_ADDR')
-
-        vote_count = Vote.objects.filter(ip_ad=ipaddress, category=6).count()
-        if vote_count > 0:
-            return HttpResponseRedirect("/poll/?response=already")
-        else:
-            pass
-
-        voted = Vote(ip_ad=ipaddress, contestant=contestant, category="6")
-        voted.save()
-
-        contestant_here = Contestant.objects.get(id=contestant)
-        contestant_here.votes += 1
-        contestant_here.save()
-
-        return HttpResponseRedirect("/poll/?board=rj46&category=f_male")
-
-    elif 'vote_fashion_female' in request.POST:
-        contestant = request.POST.get('fashionable_female_year', '')
-        if contestant == '':
-            return HttpResponseRedirect("/poll/?response=no_one")
-
-        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-        if x_forwarded_for:
-            ipaddress = x_forwarded_for.split(',')[-1].strip()
-        else:
-            ipaddress = request.META.get('REMOTE_ADDR')
-
-        vote_count = Vote.objects.filter(ip_ad=ipaddress, category=7).count()
-        if vote_count > 0:
-            return HttpResponseRedirect("/poll/?response=already")
-        else:
-            pass
-
-        voted = Vote(ip_ad=ipaddress, contestant=contestant, category="7")
-        voted.save()
-
-        contestant_here = Contestant.objects.get(id=contestant)
-        contestant_here.votes += 1
-        contestant_here.save()
-
-        return HttpResponseRedirect("/poll/?board=rj47&category=f_female")
-
-    elif 'vote_personality' in request.POST:
-        contestant = request.POST.get('personality_year', '')
-        if contestant == '':
-            return HttpResponseRedirect("/poll/?response=no_one")
-
-        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-        if x_forwarded_for:
-            ipaddress = x_forwarded_for.split(',')[-1].strip()
-        else:
-            ipaddress = request.META.get('REMOTE_ADDR')
-
-        vote_count = Vote.objects.filter(ip_ad=ipaddress, category=8).count()
-        if vote_count > 0:
-            return HttpResponseRedirect("/poll/?response=already")
-        else:
-            pass
-
-        voted = Vote(ip_ad=ipaddress, contestant=contestant, category="8")
-        voted.save()
-
-        contestant_here = Contestant.objects.get(id=contestant)
-        contestant_here.votes += 1
-        contestant_here.save()
-
-        return HttpResponseRedirect("/poll/?board=rj48&category=personality")
-
-    else:
-        return HttpResponseRedirect("/poll/?response=no_count")
-
-
-def index(request):
+def oldindex(request):
     if request.GET.get('board') and request.GET.get('category'):
         board = request.GET.get('board')
         category = request.GET.get('category')
@@ -278,7 +278,7 @@ def index(request):
     })
 
 
-def result(request):
+def index(request):
 
     student_category = Category.objects.get(id=1)
     couple_category = Category.objects.get(id=2)

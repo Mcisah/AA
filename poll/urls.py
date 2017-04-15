@@ -20,7 +20,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'result/', views.result, name='result'),
+    # url(r'result/', views.result, name='result'),
     url(r'about', views.about, name='about'),
-    url(r'vote', views.vote, name='vote'),
+    # url(r'vote', views.vote, name='vote'),
 ]
